@@ -1,8 +1,8 @@
 const fs = require('fs');
-const path = 'C:\\Users\\iliai\\IdeaProjects\\ragemp-gui\\src\\components';
+const path = 'C:\\project\\src\\components';
 
-find(path).forEach(path => {
-    console.log('pugToHtml', path);
+find(path).forEach(p => {
+    console.log('pugToHtml', p.replace(path, ''));
 });
 
 function find(path) {
