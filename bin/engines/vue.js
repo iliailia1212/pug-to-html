@@ -82,7 +82,7 @@ module.exports = function(filePath) {
             doctype: "html",
             pretty: true,
             plugins: [pugPlugin],
-          });
+          }).trim();
       } else if (templateLang === TEMPLATE_LANG.JADE) {
         return jade
           .render(findTemplate(), {
@@ -101,7 +101,7 @@ module.exports = function(filePath) {
 
       const templateLang = getVueTemplateLang();
       const data = contents
-        .replace(findTemplateRaw(templateLang), `${formatted}\n`)
+        .replace(findTemplateRaw(templateLang), formatted)
         .replace(TEMPLATE_PREFIX[templateLang], "<template>");
       fs.writeFileSync(filePath, data);
     },
