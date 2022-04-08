@@ -49,7 +49,7 @@ module.exports = function(filePath) {
   }
 
   function findTemplateRaw(templateLang) {
-    return contents.split(TEMPLATE_PREFIX[templateLang])[1].split("</template>")[0];
+    return contents.split(TEMPLATE_PREFIX[templateLang])[1].split("</template>")[0].trim();
   }
 
   function findTemplate() {
